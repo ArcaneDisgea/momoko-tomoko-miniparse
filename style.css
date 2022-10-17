@@ -1,0 +1,93 @@
+/*
+            表示設定 (1)
+            Settings
+        */
+
+* {
+  /*
+             フォント （一部のフォントは上手く適用されない） 
+             Fonts (Some fonts do not work well)
+            */
+  font-family: "";
+  font-size: 12px;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+html {
+  /* リサイズ用のハンドル
+             * リサイズができる場所はウィンドウ右下の16x16ピクセルの場所
+             * この部分が完全に透明だとマウス入力が透過してしまってサイズを変更できなくなる 
+             Handle for resizing
+              * The place which can be resized is the place of 16x16 pixel at the lower right of the window
+              * If this part is completely transparent, mouse input will be transparent and you will not be able to resize
+             */
+  background-image: url(images/handle.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 100%;
+  /* Frame */
+  /*border: 1px solid rgba(0,0,0,0.1);*/
+  /* はみ出た内容はスクロールバーを表示させずに隠す
+             * 今のところ、ブラウザへの入力はできないので表示させても無意味 
+             Hide the overflow content without displaying the scroll bar
+              * For now, it can not be displayed in the browser, so it is meaningless to display
+             */
+  overflow: hidden;
+  /* 背景色 */
+  background-color: transparent;
+}
+
+#wrapper {
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+  margin: 12px;
+}
+
+#combatantTable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* キャラクターデータのテキストの設定 
+        Settings for Character Data display
+        */
+#combatantTableBody * {
+  color: #e2ebf5;
+  text-shadow: -1px 0 3px #217aa2, 0 1px 3px #217aa2, 1px 0 3px #217aa2, 0 -1px 3px #217aa2;
+  font-weight: 300;
+  /* はみ出たテキストを「…」で省略する 
+            Add elipses to overflow text "Warri..."
+            */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#combatantTableBody img {
+  height: 20px;
+  /* エンカウント情報とテーブルヘッダ内のテキストの設定 
+            Settings for encounter information and table text
+            */
+}
+
+#encounter,
+#combatantTableHeader * {
+  color: #ded7be;
+  text-shadow: -1px 0 2px #795516, 0 1px 2px #795516, 1px 0 2px #795516, 0 -1px 2px #795516;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+/* テーブルヘッダの下線の設定 
+        Table header underline
+        */
+#combatantTableHeader tr {
+  border-bottom: 1px solid #ded7be;
+}
